@@ -1,0 +1,386 @@
+[
+  {
+    "braille_name": 0,
+    "symbol": "u2800",
+    "meaning1": "⠀",
+    "meaning2": "⠀"
+  },
+  {
+    "braille_name": 1,
+    "symbol": "u2801",
+    "meaning1": "a",
+    "meaning2": 1
+  },
+  {
+    "braille_name": 2,
+    "symbol": "u2802",
+    "meaning1": ",",
+    "meaning2": "be"
+  },
+  {
+    "braille_name": 12,
+    "symbol": "u2803",
+    "meaning1": "b",
+    "meaning2": 2
+  },
+  {
+    "braille_name": 3,
+    "symbol": "u2804",
+    "meaning1": "",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 13,
+    "symbol": "u2805",
+    "meaning1": "k",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 23,
+    "symbol": "u2806",
+    "meaning1": ";",
+    "meaning2": "be"
+  },
+  {
+    "braille_name": 123,
+    "symbol": "u2807",
+    "meaning1": "l",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 4,
+    "symbol": "u2808",
+    "meaning1": "accent_prefix",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 14,
+    "symbol": "u2809",
+    "meaning1": "c",
+    "meaning2": 3
+  },
+  {
+    "braille_name": 24,
+    "symbol": "u280A",
+    "meaning1": "i",
+    "meaning2": 9
+  },
+  {
+    "braille_name": 124,
+    "symbol": "u280B",
+    "meaning1": "f",
+    "meaning2": 6
+  },
+  {
+    "braille_name": 34,
+    "symbol": "u280C",
+    "meaning1": "st",
+    "meaning2": "/"
+  },
+  {
+    "braille_name": 134,
+    "symbol": "u280D",
+    "meaning1": "m",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 234,
+    "symbol": "u280E",
+    "meaning1": "s",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1234,
+    "symbol": "u280F",
+    "meaning1": "p",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 5,
+    "symbol": "u2810",
+    "meaning1": "contraction",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 15,
+    "symbol": "u2811",
+    "meaning1": "e",
+    "meaning2": 5
+  },
+  {
+    "braille_name": 25,
+    "symbol": "u2812",
+    "meaning1": ":",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 125,
+    "symbol": "u2813",
+    "meaning1": "h",
+    "meaning2": 8
+  },
+  {
+    "braille_name": 35,
+    "symbol": "u2814",
+    "meaning1": "in",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 135,
+    "symbol": "u2815",
+    "meaning1": "o",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 235,
+    "symbol": "u2816",
+    "meaning1": "!",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1235,
+    "symbol": "u2817",
+    "meaning1": "r",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 45,
+    "symbol": "u2818",
+    "meaning1": "currency_prefix",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 145,
+    "symbol": "u2819",
+    "meaning1": "d",
+    "meaning2": 4
+  },
+  {
+    "braille_name": 245,
+    "symbol": "u281A",
+    "meaning1": "j",
+    "meaning2": 0
+  },
+  {
+    "braille_name": 1245,
+    "symbol": "u281B",
+    "meaning1": "g",
+    "meaning2": 7
+  },
+  {
+    "braille_name": 345,
+    "symbol": "u281C",
+    "meaning1": "ar",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1345,
+    "symbol": "u281D",
+    "meaning1": "n",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 2345,
+    "symbol": "u281E",
+    "meaning1": "t",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 12345,
+    "symbol": "u281F",
+    "meaning1": "q",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 6,
+    "symbol": "u2820",
+    "meaning1": "uppercase_prefix",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 16,
+    "symbol": "u2821",
+    "meaning1": "ch",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 26,
+    "symbol": "u2822",
+    "meaning1": "en",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 126,
+    "symbol": "u2823",
+    "meaning1": "gh",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 36,
+    "symbol": "u2824",
+    "meaning1": "",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 136,
+    "symbol": "u2825",
+    "meaning1": "u",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 236,
+    "symbol": "u2826",
+    "meaning1": "“",
+    "meaning2": "?"
+  },
+  {
+    "braille_name": 1236,
+    "symbol": "u2827",
+    "meaning1": "v",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 46,
+    "symbol": "u2828",
+    "meaning1": "italic_prefix",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 146,
+    "symbol": "u2829",
+    "meaning1": "sh",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 246,
+    "symbol": "u282A",
+    "meaning1": "ow",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1246,
+    "symbol": "u282B",
+    "meaning1": "ed",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 346,
+    "symbol": "u282C",
+    "meaning1": "ing",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1346,
+    "symbol": "u282D",
+    "meaning1": "x",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 2346,
+    "symbol": "u282E",
+    "meaning1": "the",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 12346,
+    "symbol": "u282F",
+    "meaning1": "and",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 56,
+    "symbol": "u2830",
+    "meaning1": "letter_prefix",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 156,
+    "symbol": "u2831",
+    "meaning1": "wh",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 256,
+    "symbol": "u2832",
+    "meaning1": ".",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1256,
+    "symbol": "u2833",
+    "meaning1": "ou",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 356,
+    "symbol": "u2834",
+    "meaning1": "”",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1356,
+    "symbol": "u2835",
+    "meaning1": "z",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 2356,
+    "symbol": "u2836",
+    "meaning1": "(",
+    "meaning2": ")"
+  },
+  {
+    "braille_name": 12356,
+    "symbol": "u2837",
+    "meaning1": "of",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 456,
+    "symbol": "u2838",
+    "meaning1": "contraction",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 1456,
+    "symbol": "u2839",
+    "meaning1": "th",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 2456,
+    "symbol": "u283A",
+    "meaning1": "w",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 12456,
+    "symbol": "u283B",
+    "meaning1": "er",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 3456,
+    "symbol": "u283C",
+    "meaning1": "number_prefix",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 13456,
+    "symbol": "u283D",
+    "meaning1": "y",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 23456,
+    "symbol": "u283E",
+    "meaning1": "with",
+    "meaning2": ""
+  },
+  {
+    "braille_name": 123456,
+    "symbol": "u283F",
+    "meaning1": "for",
+    "meaning2": ""
+  }
+]
