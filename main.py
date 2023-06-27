@@ -1,115 +1,100 @@
-character_unicodes = {'a': '\u2801', 'b': '\u2803', 'k': '\u2805', 'l': '\u2807', 'c': '\u2809', 'i': '\u280A',
-                      'f': '\u280B', 'm': '\u280D', 's': '\u280E', 'p': '\u280F', 'e': '\u2811', 'h': '\u2813',
-                      'o': '\u2815', 'r': '\u2817',
-                      'd': '\u2819', 'j': '\u281A', 'g': '\u281B', 'n': '\u281D', 't': '\u281E', 'q': '\u281F',
-                      'u': '\u2825', 'v': '\u2827',
-                      'x': '\u282D', 'z': '\u2835', 'w': '\u283A', 'y': '\u283D', 'num': '\u283C', 'caps': '\u2820',
-                      '.': '\u2832', 'cont': '\u2810', 'letters': '\u2820',
-                      "'": '\u2804', ',': '\u2802', '-': '\u2824', '/': '\u280C', '!': '\u2816',
-                      '?': '\u2826',
-                      '$': '\u2832', ':': '\u2812', '@': '\u2801',
-                      ';': '\u2830', '(': '\u2836', ')': '\u2836', ' ': '\u2800', '1': '\u2801', '2': '\u2803',
-                      '3': '\u2809', '4': '\u2819',
-                      '5': '\u2811', '6': '\u280B', '7': '\u281B', '8': '\u2813', '9': '\u280A', '0': '\u281A'}
-
-numberPunctuations = ['.', ',', '-', '/', '$']
-escapeCharacters = ['\n', '\r', '\t']
-
-contraction_unicodes = {'be': '\u2806', 'ar': '\u281C', 'st': '\u280C', 'in': '\u2814', 'for': '\u283F'}
-
-html_file = "frontPage.html"
+from printing import PrintBraille
+from brailleConversionLogic import separate_multiple_words
+from brailleConversionLogic import  grade_two_alpha_wordsigns
+from brailleConversionLogic import grade_two_strong_contractions
+from brailleConversionLogic import grade_two_strong_wordsigns
 
 
-def split_to_words(text_input):
-    words = text_input.split(' ')
-    return words
-
-
-def grade_one_convert_word(word_input):
-    word_input = word_input.lower()
-    braille_output = []
-    for character in word_input:
-        braille = character_unicodes.get(character)
-        braille_output += braille
-    return braille_output
-
-
-def print_braille(words_in_braille):
-    for i in range(len(words_in_braille)):
-        print(words_in_braille[i], sep=' ', end=' ')
-
-
-def check_contents(word_to_evaluate):
-    if any(char.isalpha() for char in word_to_evaluate) \
-            and not any(char.isdigit() for char in word_to_evaluate) \
-            and any(char.isupper() for char in word_to_evaluate):
-        print_letters(word_to_evaluate)
-    elif any(char.isdigit() for char in word_to_evaluate) and any(char.isalpha() for char in word_to_evaluate):
-        print_mix(word_to_evaluate)
-    elif any(char.isdigit() for char in word_to_evaluate) and not any(char.isalpha() for char in word_to_evaluate):
-        print_numbers(word_to_evaluate)
-    elif any(char.isalpha() for char in word_to_evaluate) and not any(char.isdigit() for char in word_to_evaluate):
-        print_letters(word_to_evaluate)
-    else:
-        print("Something went wrong")
-
-
-def print_mix(word_to_evaluate):
-    stack = []
-    for i in range(0, len(word_to_evaluate)):
-        if word_to_evaluate[i].isalpha() and len(stack) == 0:
-            stack += word_to_evaluate[i]
-        elif word_to_evaluate[i].isdigit() and len(stack) == 0:
-            stack += word_to_evaluate[i]
-        elif word_to_evaluate[i].isalpha() and len(stack) != 0 and stack[-1].isalpha():
-            stack += word_to_evaluate[i]
-        elif word_to_evaluate[i].isdigit() and len(stack) != 0 and stack[-1].isdigit():
-            stack += word_to_evaluate[i]
-        elif word_to_evaluate[i].isdigit() and len(stack) != 0 and stack[-1].isalpha():
-            print_letters(stack)
-            stack.clear()
-            stack += word_to_evaluate[i]
-        elif word_to_evaluate[i].isalpha() and len(stack) != 0 and stack[-1].isdigit():
-            print_numbers(stack)
-            stack.clear()
-            stack += word_to_evaluate[i]
-        else:
-            print("Something went wrong")
-    if stack[-1].isdigit():
-        print_numbers(stack)
-    elif stack[-1].isalpha():
-        print_letters(stack)
-    else:
-        print("Something went wrong")
-
-
-def print_letters(letters_input):
-    for i in range(len(letters_input)):
-        if letters_input[i].isupper():
-            print(character_unicodes.get('caps'), sep=' ', end=' ')
-    letters_input = grade_one_convert_word(letters_input)
-    print(character_unicodes.get('letters'), sep=' ', end=' ')
-
-    print(letters_input[i], sep=' ', end=' ')
-
-
-def print_numbers(numbers_input):
-    numbers_input = grade_one_convert_word(numbers_input)
-    print(character_unicodes.get('num'), sep=' ', end=' ')
-    for i in range(len(numbers_input)):
-        print(numbers_input[i], sep=' ', end=' ')
-
+# add multithreading to check list while translating
 
 def write_to_html(words_to_html):
     print("write to html")
 
 
-user_input = "AA"
+html_file = "frontPage.html"
 
-words = split_to_words(user_input)
+user_input = input("Type some text to be converted to braille: ")
+print(separate_multiple_words(user_input))
+
+words = separate_multiple_words(user_input)
 
 for word in words:
-    check_contents(word)
+    if any(char.isalpha() for char in word) and not any(char.isdigit() for char in word):
+        my_letter = PrintBraille(word)
+        my_letter.print_letters()
+    elif any(char.isdigit() for char in word) and not any(char.isalpha() for char in word):
+        my_numbers = PrintBraille(word)
+        my_numbers.print_numbers()
+    else:
+        my_mix = PrintBraille(word)
+        my_mix.print_mix()
+for word in words:
+    grade_two_alpha_wordsigns(word)
+    grade_two_strong_contractions(word)
+    grade_two_strong_wordsigns(word)
+
+# def grade_one_convert_word(word_input):
+#     braille_output = []
+#     for character in word_input:
+#         braille = character_unicodes.get(character)
+#         braille_output += braille
+#     return braille_output
+
+# def check_contents(word_to_evaluate):
+#     if any(char.isalpha() for char in word_to_evaluate) and not any(char.isdigit() for char in word_to_evaluate):
+#         print_letters(word_to_evaluate)
+#     elif any(char.isdigit() for char in word_to_evaluate) and any(char.isalpha() for char in word_to_evaluate):
+#         print_mix(word_to_evaluate)
+#     elif any(char.isdigit() for char in word_to_evaluate) and not any(char.isalpha() for char in word_to_evaluate):
+#         print_numbers(word_to_evaluate)
+#     elif any(char.isalpha() for char in word_to_evaluate) and not any(char.isdigit() for char in word_to_evaluate):
+#         print_letters(word_to_evaluate)
+#     else:
+#         print("Something went wrong")
+
+
+# def print_mix(word_to_evaluate):
+#     stack = []
+#     for i in range(0, len(word_to_evaluate)):
+#         if word_to_evaluate[i].isalpha() and len(stack) == 0:
+#             stack += word_to_evaluate[i]
+#         elif word_to_evaluate[i].isdigit() and len(stack) == 0:
+#             stack += word_to_evaluate[i]
+#         elif word_to_evaluate[i].isalpha() and len(stack) != 0 and stack[-1].isalpha():
+#             stack += word_to_evaluate[i]
+#         elif word_to_evaluate[i].isdigit() and len(stack) != 0 and stack[-1].isdigit():
+#             stack += word_to_evaluate[i]
+#         elif word_to_evaluate[i].isdigit() and len(stack) != 0 and stack[-1].isalpha():
+#             print_letters(stack)
+#             stack.clear()
+#             stack += word_to_evaluate[i]
+#         elif word_to_evaluate[i].isalpha() and len(stack) != 0 and stack[-1].isdigit():
+#             print_numbers(stack)
+#             stack.clear()
+#             stack += word_to_evaluate[i]
+#         else:
+#             print("Something went wrong")
+#     if stack[-1].isdigit():
+#         print_numbers(stack)
+#     elif stack[-1].isalpha():
+#         print_letters(stack)
+#     else:
+#         print("Something went wrong")
+
+
+# def print_letters(letters_input):
+#     for i in range(len(letters_input)):
+#         letters_input = grade_one_convert_word(letters_input)
+#     print(character_unicodes.get('letters'), sep=' ', end=' ')
+#     print(letters_input[i], sep=' ', end=' ')
+
+
+# def print_numbers(numbers_input):
+#     numbers_input = grade_one_convert_word(numbers_input)
+#     print(character_unicodes.get('num'), sep=' ', end=' ')
+#     for i in range(len(numbers_input)):
+#         print(numbers_input[i], sep=' ', end=' ')
+
 
 # take user input
 
