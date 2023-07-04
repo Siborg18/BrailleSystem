@@ -11,7 +11,7 @@ class PrintBraille:
         for i in range(len(self.converted_text)):
             if self.text[i].isupper():
                 print(f"{character_unicodes.get('caps')}", sep='', end='')
-            print(f"{self.converted_text[i]}", sep=None, end='')
+            print(f"{self.converted_text[i]}", sep='', end='')
         print(character_unicodes.get('space'), end='')
 
     def print_numbers(self):
@@ -35,4 +35,6 @@ class PrintBraille:
             elif self.text[i].isdigit() and i == 0 or self.text[i].isdigit() and self.text[i - 1].isalpha():
                 print(f"{character_unicodes.get('num')}", sep='', end='')
                 print(f"{self.converted_text[i]}", sep='', end='')
+            elif self.text[i].isascii():
+                print(f"{character_unicodes.get(self.text[i])}", sep='', end='')
         print(character_unicodes.get('space'), end='')
