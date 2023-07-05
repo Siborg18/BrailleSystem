@@ -1,13 +1,15 @@
 import brailleConversionLogic
-import brailleServer
+import socketserver
+from brailleServer import MyTCPHandler, run_http_server
 # add multithreading to check list while translating
 
+if __name__ == "__main__":
+    HOST, PORT = "localhost", 8000
 
-def write_to_html(words_to_html):
-    print("write to html")
-
-
-html_file = "index.html"
+    run_http_server()
+    with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
+        server.handle()
+        server.serve_forever()
 
 user_input = input("Type some text to be converted to braille: ")
 print(brailleConversionLogic.separate_multiple_words(user_input))
@@ -21,10 +23,5 @@ for word in words:
     brailleConversionLogic.grade_two_strong_wordsigns(word)
     brailleConversionLogic.grade_two_strong_group_signs(word)
 
-
-
-
-# Absolutely essential!  This ensures that socket resuse is setup BEFORE
-# it is bound.  Will avoid the TIME_WAIT issue
 
 
